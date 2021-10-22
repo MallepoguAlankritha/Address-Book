@@ -8,7 +8,7 @@ import java.util.Set;
 
 public class AddressbookkMain {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         AddressBookk addressBook = new AddressBookk();
         Map<String, AddressBookk> addressBookMap = new HashMap<String, AddressBookk>();
 
@@ -24,7 +24,7 @@ public class AddressbookkMain {
                     String bookName = sc.next();
                     sc.nextLine();
                     addressBookMap.put(bookName, new AddressBookk());// adding bookname as a key and vlue is allocating
-                    // memory for addressbook obj
+                    // memory for addressbookk obj
                     AddressBookk.addressBookOptions(addressBookMap.get(bookName));// call addressbookoption method with
                     // passing key of hashmap
                     break;
@@ -49,7 +49,11 @@ public class AddressbookkMain {
                     System.out.println("Welcome to the search option:");
                     addressBook.searchByOptions();
                 case 5:
-                    sc.close();// for closing the programme
+                    System.out.println("Welcome to view By Option:");
+                    addressBook.viewByOption(addressBookMap);
+                    break;
+                case 6:
+                    sc.close();// for closing the program
                     return;
                 default:
                     System.out.println("You Entered Invalid Choice....!");
